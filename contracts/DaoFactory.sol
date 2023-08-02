@@ -42,7 +42,7 @@ contract DaoFactory is Ownable {
         uint256 _executionThreshold,
         uint256 _proposalThreshold,
         uint256 _votePeriod
-    ) external {
+    ) external onlyOwner{
         BeaconProxy proxy = new BeaconProxy(
             address(DaoBeacon),
             abi.encodeWithSelector(
